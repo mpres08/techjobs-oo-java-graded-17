@@ -93,4 +93,11 @@ public class Job {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        String newLine = System.lineSeparator();
+
+        return newLine + "Job details placeholder" + newLine;
+    }
 }

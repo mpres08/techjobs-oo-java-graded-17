@@ -39,4 +39,16 @@ public class JobTest {
                 "Quality Control"), new CoreCompetency("Persistence"));
         assertFalse(job1.equals(job2));
     }
+
+    @Test
+    public void testToStringStartsWithAndEndsWithNewLine() {
+        String newLine = System.lineSeparator();
+        Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType(
+                "Quality Control"), new CoreCompetency("Persistence"));
+
+        String expectedOutput = newLine + "Job details placeholder" + newLine;
+
+        assertEquals(expectedOutput, job1.toString());
+        assertEquals(expectedOutput, job1.toString());
+    }
 }
