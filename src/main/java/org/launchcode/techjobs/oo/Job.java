@@ -98,11 +98,12 @@ public class Job {
     public String toString() {
         String newLine = System.lineSeparator();
         String jobString = newLine + "ID: " + id + newLine +
-                "Name: " + name + newLine +
-                "Employer: " + employer + newLine +
-                "Location: " + location + newLine +
-                "Position Type: " + positionType + newLine +
-                "Core Competency: " + coreCompetency + newLine;
+                "Name: " + (name != null && !name.isEmpty() ? name : "Data not available") + newLine +
+                "Employer: " + (employer != null && employer.getValue() != null && !employer.getValue().isEmpty() ?
+                         employer.getValue() : "Data not available") + newLine +
+                "Location: " + (location != null && location.getValue() != null && !location.getValue().isEmpty() ? location.getValue() : "Data not available") + newLine +
+                "Position Type: " + (positionType != null && positionType.getValue() != null && !positionType.getValue().isEmpty() ? positionType.getValue() : "Data not available") + newLine +
+                "Core Competency: " + (coreCompetency != null && coreCompetency.getValue() != null && !coreCompetency.getValue().isEmpty() ? coreCompetency.getValue() : "Data not available") + newLine;
 
         return jobString;
     }

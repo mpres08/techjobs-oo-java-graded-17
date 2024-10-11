@@ -67,6 +67,17 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
+        String newLine = System.lineSeparator();
+        Job job1 = new Job("", new Employer(""), new Location(""),
+                new PositionType(
+                ""), new CoreCompetency(""));
+        String expectedOutput = newLine + "ID: " + job1.getId() + newLine +
+                "Name: Data not available" + newLine +
+                "Employer: Data not available" + newLine +
+                "Location: Data not available" + newLine +
+                "Position Type: Data not available" + newLine +
+                "Core Competency: Data not available" + newLine;
 
+        assertEquals(expectedOutput, job1.toString());
     }
 }
