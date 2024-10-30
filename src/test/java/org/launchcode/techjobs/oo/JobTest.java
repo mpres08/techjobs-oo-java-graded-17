@@ -46,13 +46,12 @@ public class JobTest {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType(
                 "Quality Control"), new CoreCompetency("Persistence"));
         String expectedOutput = newLine +
-                "ID: 1\n" +
-                "Name: Product tester\n" +
-                "Employer: ACME\n" +
-                "Location: Desert\n" +
-                "Position Type: Quality Control\n" +
-                "Core Competency: Persistence" +
-                newLine;
+                "ID: " + testJob.getId() + newLine +
+                "Name: Product tester" + newLine +
+                "Employer: ACME" + newLine +
+                "Location: Desert" + newLine +
+                "Position Type: Quality Control" + newLine +
+                "Core Competency: Persistence" + newLine;
 
         assertEquals(expectedOutput, testJob.toString());
     }
